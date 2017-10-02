@@ -17,6 +17,7 @@ var api = express.Router();
 	.get(NewsCtrl.findById)
 	.put(NewsCtrl.update)
 	.delete(NewsCtrl.delete);
+	//So we can test
 	api.route('/fillin') 
 	.get(NewsCtrl.fillin);
 	app.use('/api/v1/', api);
