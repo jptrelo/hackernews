@@ -1,0 +1,36 @@
+body * {
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transform: transition;
+  -o-transform: transition;
+  -ms-transform: transition;
+  -webkit-transform: transition;
+  transform: transition;
+}
+.list{
+	padding: 0px 40px;
+}
+.new-row{
+	padding: 20px 0;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	cursor: pointer;
+}
+.new-row:hover {
+	background: #fafafa
+}
+.title{
+	color: #333;
+	font-size: 13pt;
+}
+.author{
+	color: #999;
+}
+a.deleteNew{
+	display: none;
+}
+.new-row:hover a.deleteNew{
+	display: inline-block;
+}

@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title HN Feed
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/style.css')
+  body
+    .container
+      // Header
+      .jumbotron.text-center
+        h1 HN Feed 
+        h2 We <3 Hacker News!
+    // News
+    .container.list
+      for item in news
+        - var url = (item.story_url != null) ? item.story_url : item.url
+        if item.story_title != null || item.title != null
+        .new-row.row(data-ide='#{item._id}')
+          .col-sm-9.new(data-url="#{url}")
+            span.title
+              strong= (item.story_title != null) ? item.story_title : item.title
+            span.author  - #{item.author} -
+          .col-sm-2
+            - var mntDate = moment(item.created_at).format('MM/DD/YYYY')
+            - var today = moment(new Date()).format('MM/DD/YYYY')
+            - var yesterday = moment(new Date()).add(-1, 'days').format('MM/DD/YYYY')
+            span 
+              if mntDate == yesterday
+                |  Yesterday
+              else if mntDate == today
+                = moment(item.created_at).format("hh:mm a")
+              else
+                = moment(item.created_at).format("MMM DD")
+          .col-sm-1
+            a.deleteNew(href='#', data-ide='#{item._id}') 
+              span.glyphicon.glyphicon-trash
+    
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='js/main.js')

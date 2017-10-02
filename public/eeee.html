@@ -1,0 +1,32 @@
+<!doctype html> 
+<html> 
+<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HN Feed</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head> 
+<body> 
+	<div class="container"> 
+		<!--Header-->
+		<div class="jumbotron text-center">
+			<h1>HN Feed <span class="label label-info"> 2 </span></h1>
+			<h2>We &#60;3 Hacker News!</h2>
+		</div>
+		<!--Lista de Todos-->
+		<div id="new-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<div class="checkbox" ng-repeat="neww in news">
+					<label>
+						<input type="checkbox"/> Text
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> 
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script> 
+	<script src="js/main.js"></script>
+</body> 
+</html>
