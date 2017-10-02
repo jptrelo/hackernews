@@ -10,11 +10,11 @@ var methodOverride = require('method-override');
 var app = express();
 app.locals.moment = require('moment');
 
-
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/hackernews';
 // Express Configuration
 // -----------------------------------------------------
 // Sets the connection to MongoDB
-mongoose.connect('mongodb://heroku_rw4r176t:8hje24s6l5tkp2nrk345ut4jl8@ds145997.mlab.com:45997/heroku_rw4r176t', function(err, res) {
+mongoose.connect(mongoUri, function(err, res) {
 	if(err) throw err;
 	console.log('Connected to Database');
 });
