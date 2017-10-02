@@ -14,7 +14,7 @@ app.locals.moment = require('moment');
 // Express Configuration
 // -----------------------------------------------------
 // Sets the connection to MongoDB
-mongoose.connect('mongodb://localhost:27017/hackernews', function(err, res) {
+mongoose.connect('mongodb://heroku_1xgsssdn:v56g2prk66b5l2evv7158oqcm7@ds149069.mlab.com:49069/heroku_1xgsssdn', function(err, res) {
 	if(err) throw err;
 	console.log('Connected to Database');
 });
