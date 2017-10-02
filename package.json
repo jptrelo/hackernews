@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Service for ReignDesign",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines" : {
+    "node" : "0.11.x"
+  },
   "dependencies": {
     "body-parser": "~1.13.2",
     "debug": "~2.2.0",
