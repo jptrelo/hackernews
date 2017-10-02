@@ -19,8 +19,8 @@ exports.fillin = function(req, res){
 	request.get({ url: url + 'search_by_date?query=nodejs' }, function(error, response, body) { 
 		if(error) return res.status(500).send(error.message);
 		if(response.statusCode == 200) { 
-			let obj = JSON.parse(body);
-			let news = _.get(obj, 'hits', null);
+			var obj = JSON.parse(body);
+			var news = _.get(obj, 'hits', null);
 
 			if (!_.isNull(news)) {
 				News.create(news, function(error, docs) {
