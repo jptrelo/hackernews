@@ -1,6 +1,7 @@
 {
   "name": "hackernews",
   "version": "1.0.0",
+  "private": true,
   "description": "Service for ReignDesign",
   "main": "server.js",
   "scripts": {
